@@ -1,0 +1,218 @@
+@import 'colors';
+@import 'bootstrap';
+@import 'mixins';
+
+.register-form{
+
+    background-color: $teal;
+    padding: 0px 20px;
+  
+    @include media-breakpoint-up(lg) {
+      padding: 60px 0px 100px;
+    }
+
+    &__submit-message{
+      display: none;
+      color: $white;
+
+      &--on{
+        display: inline;
+      }
+    }
+
+    &__form{
+
+      &--off{
+        display: none;
+      }
+
+      &__errors{
+        display: none;
+        position: absolute;
+        background-color: $white;
+        padding: 10px;
+        margin-top: 0px;
+        margin-left: 50px;
+
+        @include media-breakpoint-up(md) {
+          margin-left: 0px;
+          margin-top: 20px;
+        }
+
+        &__list{
+            margin: 0px;
+            padding-left: 20px;
+            list-style-type: square;
+            line-height: 1.25rem;
+            font-size: 1rem;
+        }
+    
+        &__arrow{
+            position: absolute;
+            border: 14px solid transparent;
+            border-top: 14px solid;
+            border-right: 14px solid;
+            color: $white;
+            width: 0;
+            height: 0;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -14px;
+            transform: rotate(-45deg);
+
+            @include media-breakpoint-up(sm) {
+                left: 48%;
+                right: unset;
+                top: -14px;
+                bottom: unset;
+                transform: rotate(-45deg);
+                margin: auto 0;
+            }
+        }
+
+        &--on{
+          display: inline;
+        }
+      }
+    }
+  
+    &__single{
+      @include m-column(12);
+      margin-top: 20px;
+  
+      @include media-breakpoint-up(md) {
+        @include m-column(6);
+      }
+
+      &--error{
+        height: 120px;
+      }
+    }
+  
+    &__double{
+      @include m-column(12);
+      margin-top: 20px;
+    }
+  
+    &__input{
+      height: 65px;
+      width: 100%;
+      padding: 20px;
+      display: block;
+      border: 1px solid $light-teal;
+      background: transparent;
+      color: $white;
+  
+      @include media-breakpoint-up(md) {
+        width: 90%;
+      }
+  
+      &::placeholder {
+        color: $white;
+      }
+
+      &--invalid{
+        border: 1px solid $orange;
+      }
+    }
+  
+    &__select-wrapper{
+      height: 65px;
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+      display: block;
+      background: transparent;
+      color: $white;
+  
+      @include media-breakpoint-up(md) {
+        width: 90%;
+      }
+  
+      &__arrow-down {
+        position: absolute;
+        box-sizing: border-box;
+        height: 15px;
+        width: 15px;
+        border-style: solid;
+        color: $white;
+        border-width: 0px 3px 3px 0px;
+        top: 20px;
+        right: 5%;
+        transform: rotate(45deg);
+  
+        @include media-breakpoint-up(md) {
+          right: 15%;
+        }
+      }
+    }
+  
+    &__select{
+      color: $white;
+      padding: 20px;
+      width: 100%;
+      border: 1px solid $light-teal;
+      border-radius: 0px;
+      box-shadow: none;
+      background-color: transparent;
+      background-image: none;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+  
+      &::placeholder {
+        color: $white;
+      }
+
+      &--invalid{
+        border: 1px solid $orange;
+      }
+    }
+  
+    &__textarea{
+      width: 100%;
+      padding: 20px;
+      display: block;
+      border: 1px solid $light-teal;
+      background: transparent;
+      color: $white;
+  
+      @include media-breakpoint-up(md) {
+        width: 95%;
+      }
+  
+      &::placeholder {
+        color: $white;
+      }
+
+      &--invalid{
+        border: 1px solid $orange;
+      }
+    }
+  
+    &__button{
+      @include m-button($white, $teal);
+      margin: 20px 0px;
+    }
+  }
+
+  
+  .modal-wrap {
+    position: relative;
+    height: auto;
+    &__container {
+      h2 {
+        text-align: center;
+        font-size: 18px;
+        color: #575757;
+      }
+      p {
+        font-size: 14px;
+      }
+      li {
+        font-size: 12px;
+        color: #575757;
+      }
+    }
+  }

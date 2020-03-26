@@ -1,0 +1,57 @@
+@import 'colors';
+@import 'bootstrap';
+
+.references {
+
+    &--gray{
+        background-color: $light-gray;
+    }
+
+    &--white{
+        background-color: $white;
+    }
+
+    color: $gray;
+
+    &__content{
+        padding: 10px 0px;
+
+        // Mobile
+        @media (max-width: 991px) { 
+            padding: 20px 20px 30px 20px;
+        }
+
+        &__subhead{
+            font-weight: 600;
+            margin-bottom: 10px;
+
+            // Mobile
+            @media (max-width: 991px) { 
+                margin: 0px 0px 10px;
+            }
+        }
+
+        // This doesn't fit the BEM model but not sure how to add the classes to the list items while pulling in references from markdown. Cheating for now.
+
+        ol{
+            padding-left: 20px;
+        
+            li{
+                margin-bottom: 10px;
+                font-weight: 400;
+                font-size: 1.125rem;
+            }
+        }
+
+        a{
+            color: $teal;
+            text-decoration: underline;
+    
+            &:hover{
+            color: $orange;
+            text-decoration: none;
+            }
+        }
+    }    
+
+}

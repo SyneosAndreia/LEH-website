@@ -1,0 +1,51 @@
+
+// Mixin: Create Button
+// -- Set Background Color
+// -- Set Font Color
+
+@mixin m-button($bkg-color: null, $font-color: null)
+{
+  @if ($bkg-color) {
+    background-color: $bkg-color;
+  } @else {
+    background-color: $teal;
+  }
+
+  @if ($font-color) {
+    color: $font-color;
+  } @else {
+    color: $white;
+  }
+
+  display: block;
+  width: 285px;
+  height: 55px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-decoration: none;
+
+  &:hover{
+    text-decoration: none;
+    color: $font-color;
+  }
+}
+
+// Mixin: Make Bootstrap Column
+// -- Set Column Size
+// -- Set Offset Amount
+
+@mixin m-column($col-size: null, $col-offset: null)
+{
+  @if ($col-size) {
+    @include make-col($col-size);
+  } @else {
+    @include make-col(1);
+  }
+
+  @if ($col-offset) {
+    @include make-col-offset($col-offset);
+  }
+}

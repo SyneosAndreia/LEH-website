@@ -1,0 +1,171 @@
+@import 'colors';
+@import 'bootstrap';
+@import 'mixins';
+
+.header-wrapper{
+  position: fixed;
+  width: 100%;
+  background-color: $white;
+  z-index: 10;
+  margin: 0;
+}
+
+.header{
+  margin: 15px auto !important;
+  
+  &__logo-wrapper {
+    @include media-breakpoint-up(xs){
+      @include m-column(5);
+
+      &__logo{
+        max-height: 50px;
+        margin-left: 20px;
+      }
+    }
+    @include media-breakpoint-up(sm){
+      @include m-column(4);
+    }
+    @include media-breakpoint-up(md){
+      @include m-column(3);
+    }
+    @include media-breakpoint-up(lg) {
+      @include m-column(2);
+
+      &__logo{
+        margin-left: unset;
+      }
+    }
+  }
+
+  &__links-wrapper {
+    @include m-column(10);
+
+    align-items: center;
+    text-align: right;
+  }
+
+  &__link{
+
+    margin: 0px 10px 0 30px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: $gray;
+    line-height: 1.2;
+    text-align: left;
+
+    &--patient{
+      border-left: 2px $teal solid;
+      padding: 5px 0px 5px 10px;
+      margin-left: 30px;
+      color: $teal;
+    }
+
+    &--active{
+      color: $orange;
+    }
+    &--active:hover{
+      text-decoration: none;
+    }
+  }
+
+  &__link-site{
+
+    margin: 0px 10px 0 30px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: $gray;
+    line-height: 1.2;
+    text-align: left;
+
+    &--patient{
+      border-left: 2px $teal solid;
+      padding: 5px 0px 5px 10px;
+      margin-left: 30px;
+      color: $teal;
+    }
+
+    &--active{
+      color: $orange;
+    }
+    &--active:hover{
+      text-decoration: none;
+    }
+  }
+
+  &__link:hover{
+    color: $orange;
+  }
+
+  &__link-site:hover{
+    color: $orange;
+  }
+
+  &__mobile-menu-wrapper {
+    @include media-breakpoint-up(xs){
+      @include m-column(7);
+    }
+    @include media-breakpoint-up(sm){
+      @include m-column(8);
+    }
+    @include media-breakpoint-up(md){
+      @include m-column(9);
+    }
+    align-self: center;
+    padding-right: 20px !important;
+  }
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  width: 36px;
+  height: 30px;
+  position: relative;
+  float: right;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: $dark-gray;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: $white;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #575757;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+.bm-menu a {
+  padding: 10px 0px;
+  color: #fff !important;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0px;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}

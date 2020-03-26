@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "name": "Batman",
+        "jobTitle": "Billionaire",
+        "clinicName": "Gotham",
+        "streetName": "12 Victory Road Mews",
+        "postCode": "SW19 1HA",
+        "email": "test123@email.com",
+        "telephone": "074552222921",
+        "webAddress": "http:\\test.com",
+        "lat": 51.507351,
+        "lng": -0.127758
+    },
+    {
+        "id": 2,
+        "name": "Lorem Ipsum",
+        "jobTitle": "Dolor Sit",
+        "clinicName": "Pellentesque Faucibus",
+        "streetName": "12 Victory Road Mews",
+        "postCode": "SW19 1HA",
+        "email": "test123@email.com",
+        "telephone": "074552222921",
+        "webAddress": "http:\\test.com",
+        "lat": 41.14961,
+        "lng": -8.61099
+    }
+]

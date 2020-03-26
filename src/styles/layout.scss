@@ -1,0 +1,267 @@
+// I'm doing these imports on every scss file, but gatsby is being a good
+// open source citizen and including the copyright comment header in the output css.
+// the problem with this is it's repeating for every individual import of these,
+// even though they're just mixins and variables (with the exception of the utility
+// classes for hide/show on mobile {which aren't being repeated}).
+
+// Maybe a solution would be to just give up on the multiple imports and shove everything
+// into a main.scss file old school style? I wasn't able to get the css modules support
+// (which is ostensibly enabled by naming a file `something.module.scss`) to apply styles properly,
+// so the amount of code we're saving is minimal at best. However: I can confirm there's some code splitting
+// going on, since it only inlines the css for the import on a given page. The Sizechanger css isn't
+// getting loaded on HCP, for example.
+
+@import 'colors';
+@import 'bootstrap';
+@import 'mixins';
+
+// Layout - Container Styles
+// -- Prefix 'l' used to identify global layout styles
+
+// html {
+//   scroll-behavior: smooth;
+// }
+
+sup{
+  font-size: 60% !important;
+}
+
+.video-react .video-react-big-play-button.video-react-big-play-button-center {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.video-react .video-react-big-play-button.video-react-big-play-button-center:before {
+  font-size: 50px;
+  top: 15px;
+}
+
+// Remove highlights on inputs,textareas,buttons
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+section {
+  position: relative;
+}
+
+.anchr {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  top: -80px;
+}
+
+.ReactModal__Overlay {
+  z-index: 100;
+}
+.splash-btn {
+  cursor: pointer;
+  margin: 0 auto 10px !important;
+}
+
+.ReactModal__Content {
+  max-width: 520px;
+  & p {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+.modal-wrap {
+  padding: 20px;
+  background-color: #ea7c16;
+}
+
+
+.l-no-break{
+  white-space:nowrap;
+}
+
+.l-main{
+  overflow: hidden;
+  padding-top: 80px;
+
+  &--sizer{
+    @include media-breakpoint-up(lg) { 
+      padding-top: 25px;
+    }
+  }
+}
+
+.l-container{
+  @include make-container();
+  @include make-container-max-widths();
+  padding: 0px;
+}
+
+.l-container-full{
+  @include m-column(12);
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 auto;
+}
+
+.l-row{
+  @include make-row();
+  margin: 0px;
+  overflow: none;
+
+  &--reverse-sm{
+
+    /* Reverse - Mobile */
+    @media (max-width: 991px) { 
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.l-col{
+  @include make-col-ready();
+  padding: 0;
+}
+
+// Layout - Default Copy Styles
+
+.l-headline{
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  text-align: left;
+}
+
+.l-cta-subhead{
+  font-size: 1.5625rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.l-p{
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  margin: 20px 0px 0px;
+  text-align: left;
+
+  &--statement{
+    font-size: 1.4065rem;
+    font-weight: 500;
+
+    /* Mobile */
+    @media (max-width: 991px) { 
+      font-size: 1.6875rem;
+      line-height: 2rem;
+    }
+  }
+  
+  &--footnote{
+    font-weight: 400;
+    font-size: .9375rem;
+    line-height: 1.25rem;
+  }
+}
+  
+.l-list{
+  padding-left: 20px;
+  margin: 20px 0px;
+  list-style-type: square;
+  text-align: left;
+
+  &__item{
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+  }
+}
+
+.l-link{
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-decoration: underline;
+  margin: 20px 0px 0px;
+  
+  &:hover{
+    text-decoration: none;
+  }
+
+  &--teal-orange{
+    color: $teal;
+
+    &:hover{
+      color: $orange;
+    }
+  }
+}
+
+.l-button{
+  margin-top: 30px;
+
+  &--teal-white{
+      @include m-button($teal, $white);
+  }
+
+  &--white-teal{
+      @include m-button($white, $teal);
+  }
+
+  &--white-orange{
+      @include m-button($white, $orange);
+  }
+}
+
+.l-sup{
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+.l-sub{
+  vertical-align: baseline;
+  position: relative;
+  top: 0.4em;
+}
+
+// Layout - DTC - Zoom - Image Hide
+
+.img-hide {
+  background-image: none !important;
+
+  div{
+    background-image: none !important;
+  }
+
+  img{
+    display: none !important;
+  }
+}
+
+.zoom-fonts-50 {
+
+  font-size: 112.5% !important;
+}
+
+.zoom-fonts-100 {
+
+  font-size: 125% !important;
+}
+
+// MOBILE
+
+/* Decrease all font sizes on mobile */
+@media (max-width: 992px) { 
+ 
+  html {
+    /* default is 1rem or 16px */
+    font-size: 16px;
+  }
+   
+}
+

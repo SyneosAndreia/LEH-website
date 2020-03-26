@@ -1,0 +1,83 @@
+@import 'colors';
+@import 'bootstrap';
+
+.safety{
+
+    &--gray{
+        background-color: $light-gray;
+    }
+
+    &--white{
+        background-color: $white;
+    }
+
+    &__content-wrapper{
+        padding: 60px 0px 20px;
+        color: $gray;
+
+        // Mobile
+        @media (max-width: 991px) { 
+            padding: 0px 40px 30px 20px;
+        }
+
+        &__headline{
+            color: $teal;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        &__subhead{
+            font-weight: 600;
+            line-height: 1.75rem;
+        }
+
+        &__content{
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        &__safety-p{
+            font-weight: 500;
+        }
+
+        &__warnings-precautions{
+
+            &__button{
+    
+                margin: 20px 0px 10px;
+                color: $teal;
+                border: none;
+                background-color: inherit;
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+    
+            &__icon{
+                width: 31px;
+                margin-right: 15px;
+            }
+
+            &__contents{
+
+                &__list{
+                    padding-left: 20px;
+                    font-weight: 500;
+                    margin-top: 10px;
+                
+                    &__item{
+                        margin-bottom: 10px;
+                    }
+                }
+
+                // Expand/Collapse component classes
+                &--collapsed {
+                    display: none;
+                }
+                
+                &--opened {
+                    display: block;
+                }
+            }
+        }
+    }
+}

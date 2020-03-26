@@ -1,0 +1,50 @@
+@import 'colors';
+@import 'bootstrap';
+@import 'mixins';
+
+
+.GoogleMaps {
+    margin: 20px auto 0;
+    width: 75vw;
+    height: 100vh;
+    &__location-map {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        }
+}
+
+.listClinics {
+    color: $white;
+    background-color: $teal;
+
+    .l-p{
+        margin: 10px 0px;
+        width: 33%;
+    }
+
+    &__content-wrapper{
+        padding: 30px 20px 0px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 70px 0px;
+        }
+    }
+
+    &__clinics-wrapper {
+        margin-top: 30px;
+
+        .clinic-wrapper {
+            display: block;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+    
+            @include media-breakpoint-up(sm) {
+                display: flex;
+                justify-content: space-between;
+            }
+
+        }
+    }
+
+    
+}

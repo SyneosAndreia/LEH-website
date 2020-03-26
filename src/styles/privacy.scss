@@ -1,0 +1,50 @@
+@import 'colors';
+@import 'bootstrap';
+@import 'mixins';
+
+.privacy {
+    color: $gray;
+
+    .l-p{
+        margin: 10px 0px;
+    }
+
+    &__content-wrapper{
+        padding: 30px 20px 0px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 70px 0px;
+        }
+
+        &__header{
+            font-weight: 600;
+            margin: 20px 0px 10px !important;
+        }
+
+        &__list{
+            padding-left: 20px;
+            margin: 0px;
+            list-style-type: square;
+
+            @include media-breakpoint-up(lg) {
+                margin: 10px 19px 0px;
+            }
+    
+            &__item{
+                margin-bottom: 10px;
+                line-height: 1.5rem;
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+        }
+
+        &__link{
+            display: inline;
+            color: $gray;
+
+            &:hover{
+                color: $orange;
+            }
+        }
+    }
+}
